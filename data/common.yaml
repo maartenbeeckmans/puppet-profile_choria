@@ -1,4 +1,4 @@
 ---
-profile_choria::client: true
+profile_choria::server: false
 profile_choria::manage_firewall_entry: true
 ...

@@ -2,16 +2,16 @@
 #
 #
 class profile_choria (
-  Boolean $client,
+  Boolean $server,
   Boolean $manage_firewall_entry,
 ) {
-  if $client {
-    class { 'choria':
-      manage_package_repo => true,
-    }
-  } else {
+  if $server {
     class { 'choria::broker':
       network_broker => true,
+    }
+  } else {
+    class { 'choria':
+      manage_package_repo => true,
     }
   }
 
