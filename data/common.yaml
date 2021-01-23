@@ -1,4 +1,31 @@
 ---
 profile_choria::broker: false
 profile_choria::manage_firewall_entry: true
+profile_choria::site_policies:
+ - action: "allow"
+   callers: "choria=root.mcollective"
+   actions: "*"
+   facts: "*"
+   classes: "*"
+ - action: "allow"
+   callers: "choria=maarten.mcollective"
+   actions: "*"
+   facts: "*"
+   classes: "*"
+profile_choria::plugin_classes:
+  - choria
+  - mcollective_agent_bolt_tasks
+  - mcollective_agent_filemgr
+  - mcollective_agent_iptables
+  - mcollective_agent_nettest
+  - mcollective_agent_nrpe
+  - mcollective_agent_package
+  - mcollective_agent_process
+  - mcollective_agent_puppet
+  - mcollective_agent_puppetca
+  - mcollective_agent_service
+  - mcollective_agent_shell
+  - mcollective_choria
+  - mcollective_data_sysctl
+  - mcollective_util_actionpolicy
 ...
