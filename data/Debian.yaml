@@ -1,0 +1,5 @@
+---
+profile_choria::scout::plugindir: '/usr/lib/nagios/plugins'
+profile_choria::scout::monitoring_packages:
+  - 'monitoring-plugins'
+...

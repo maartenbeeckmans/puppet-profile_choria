@@ -12,6 +12,11 @@ profile_choria::site_policies:
    actions: "*"
    facts: "*"
    classes: "*"
+ - action: "allow"
+   actions: "checks"
+   callers: "*"
+   facts: "*"
+   classes: "*"
 profile_choria::plugin_classes:
   - choria
   - mcollective_agent_bolt_tasks
@@ -28,4 +33,10 @@ profile_choria::plugin_classes:
   - mcollective_choria
   - mcollective_data_sysctl
   - mcollective_util_actionpolicy
+profile_choria::server_config:
+  plugin.choria.prometheus_textfile_directory: /var/lib/node_exporter/textfile
+  plugin.choria.machine.store: /etc/choria/machine/ 
+
+# Scout configuration
+profile_choria::enable_scout: true
 ...

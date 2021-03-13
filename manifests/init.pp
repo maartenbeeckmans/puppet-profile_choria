@@ -6,11 +6,14 @@ class profile_choria (
   Boolean $manage_firewall_entry,
   Tuple   $site_policies,
   Tuple   $plugin_classes,
+  Hash    $server_config,
+  Boolean $enable_scout,
 ) {
   class { 'choria':
     server              => true,
     manage_mcollective  => false,
     manage_package_repo => true,
+    server_config       => $server_config,
   }
 
   class { 'mcollective':
@@ -38,5 +41,9 @@ class profile_choria (
       proto  => 'tcp',
       action => 'accept',
     }
+  }
+
+  if $enable_scout {
+    include profile_choria::scout
   }
 }
