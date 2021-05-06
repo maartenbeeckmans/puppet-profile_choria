@@ -8,7 +8,7 @@ profile_choria::site_policies:
    facts: "*"
    classes: "*"
  - action: "allow"
-   callers: "choria=maarten.mcollective"
+   callers: "choria=maartenb.mcollective"
    actions: "*"
    facts: "*"
    classes: "*"
